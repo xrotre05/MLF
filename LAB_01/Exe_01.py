@@ -22,11 +22,12 @@ for x in input_str:
         res=res+int(x)
     except:
         res=res
-print(res)
+print("Sum= "+str(res))
 
 print("\nExercise 1.3\n")
 import random
 int_num=random.randrange(1,1000)
+print("Random integer: "+str(int_num))
 bin_num=int_num
 bits=""
 
@@ -37,7 +38,7 @@ while (bin_num)>=1:
         bits="0"+bits
     bin_num=int(bin_num/2)
 
-print(bits)
+print("Conversion to bits: "+str(bits))
 
 print("\nExercise 1.4\n")
 
@@ -51,11 +52,43 @@ def fibonaci(fib_num):
         f_temp=f1+f2
         f1=f2
         f2=f_temp
-        if f2<fib_num:
+        if f2>fib_num:
             break
         fib_str=fib_str+", "+str(f2)
  
     fib_str=fib_str+"]"
     return fib_str
 
-print(fibonaci(10))
+fn=200
+print("upper limit: "+str(fn))
+print(fibonaci(fn))
+
+print("\nExercise 1.5\n")
+
+def rock_paper_scissors() -> None:
+    RPS = input("Enter your move: ")
+    strRPS=["rock","paper","scissors"]
+    pcmove=random.randrange(1,4)-1
+    print("pcmove: "+ str(strRPS[pcmove]))
+    if RPS.lower()== strRPS[0].lower(): # rock
+        usermove=0
+
+    elif RPS.lower()== strRPS[1].lower(): # paper
+        usermove=1
+
+    elif RPS.lower()== strRPS[2].lower(): # scissors
+        usermove=2  
+    else:
+        print("invalid move")
+        return
+            
+    print("usermove: "+ str(strRPS[usermove]))
+
+    if (usermove-1==pcmove) or (usermove==pcmove-2):
+        print("You win")
+    elif (usermove==pcmove-1) or (usermove-2==pcmove):   
+        print("You lose")
+    elif usermove==pcmove:
+        print("It is a tie")
+    
+rock_paper_scissors()
