@@ -39,3 +39,23 @@ while (bin_num)>=1:
 
 print(bits)
 
+print("\nExercise 1.4\n")
+
+def fibonaci(fib_num):
+    f1=0
+    f2=1
+    fib_str=("["+str(f1)+", "+str(f2))
+    
+    while f2<fib_num:
+        
+        f_temp=f1+f2
+        f1=f2
+        f2=f_temp
+        if f2<fib_num:
+            break
+        fib_str=fib_str+", "+str(f2)
+ 
+    fib_str=fib_str+"]"
+    return fib_str
+
+print(fibonaci(10))
